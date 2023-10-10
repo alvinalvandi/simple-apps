@@ -21,18 +21,9 @@ app.get('/app2', (req, res) => {
   res.send('Hello this App 2!')
 });
 
-app.get('/alvin', (req, res) => {
-  res.send('Lagi Ikut Training Devops IDN!')
-});
-
 app.get('/users', (req, res, next) => {
   const sql = "SELECT * FROM tb_data ORDER BY id desc"
-  connection.query(sql,(error, fields) => {
-    if (error) {
-      console.log('error', error)
-    } else {
-      res.send(fields)
-    }
+  connection.query(sql, {
   })
 });
 
